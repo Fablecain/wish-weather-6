@@ -16,7 +16,7 @@ searchButton.addEventListener("click", () => {
  * @param {string} city - The name of the city
  */
 function fetchCoordinatesByCity(city) {
-    const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const endpoint = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
     fetch(endpoint)
         .then(response => response.json())
@@ -32,3 +32,29 @@ function fetchCoordinatesByCity(city) {
             console.error("Error fetching coordinates.", error);
         });
 }
+
+/**
+ * Fill in the HTML with the fetched weather data
+ * @param {object} data - The weather data
+ * @param {string} city - The name of the city
+ */
+function updateWeatherData(data, city) {
+    // Updating current weather details
+    document.getElementById("city-name").innerText = city;
+    document.getElementById("current-date").innerText = new Date(data.list[0].dt_txt).toLocaleDateString();
+    document.getElementById("current-icon").src = `http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`;
+    document.getElementById("current-temperature").innerText = data.list[0].main.temp;
+    document.getElementById("current-humidity").innerText = data.list[0].main.humidity;
+    document.getElementById("current-wind-speed").innerText = data.list[0].wind.speed;
+
+    // Loop through forecast data to update the 5-day forecast cards
+    for (let i = 1; i <= 4; i++) {
+        const forecastData = data.list[i * 8];  // Fetching data at an estimated 24 hours
+        document.getElementById(`day${i + 1}-date`).innerText = new Date(forecastData.dt_txt).toLocaleDateString();
+        document.getElementById(`day${i + 1}-icon`).src = `http://openweathermap.org/img/w/${forecastData.weather[0].icon}.png`;
+        document.getElementById(`day${i + 1}-temperature`).innerText = forecastData.main.temp;
+        document.getElementById(`day${i + 1}-wind-speed`).innerText = forecastData.wind.speed;
+        document.getElementById(`day${i + 1}-humidity`).innerText = forecastData.main.humidity;
+    }
+}
+
