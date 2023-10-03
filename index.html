@@ -6,3 +6,43 @@
     <title>Wish Weather 6</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<body>
+
+    <header>
+        <h1>Wish Weather 6</h1>
+    </header>
+
+    <section class="main-content">
+        <!-- Search Area -->
+        <div class="search-area">
+            <h2>Find Weather for Your City</h2>
+            <input type="text" id="city-input" placeholder="Enter City Name">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <!-- Display Area (divided into Current Weather and 5-Day Forecast) -->
+        <div class="display-area">
+            <!-- Current Weather Display Area -->
+            <div class="current-weather">
+                <h2>Current Conditions</h2>
+                <h3 id="city-name-date"></h3> <!-- Example: "New York (01/01/2023)" -->
+                <img id="weather-icon" src="" alt="Weather Icon" title="Weather Condition">
+                <p><strong>Temperature:</strong> <span id="temperature"></span>°C</p>
+                <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+                <p><strong>Wind Speed:</strong> <span id="wind-speed"></span> km/h</p>
+            </div>
+
+            <!-- 5-Day Forecast Display Area -->
+            <div class="forecast">
+                <h2>5-Day Forecast</h2>
+                <!-- Day 1 Card -->
+                <div class="forecast-card" id="day1">
+                    <h3 id="day1-date"></h3>
+                    <img id="day1-icon" src="" alt="Weather Icon" title="Weather Condition">
+                    <p><strong>Temperature:</strong> <span id="day1-temperature"></span>°C</p>
+                    <p><strong>Wind Speed:</strong> <span id="day1-wind-speed"></span> km/h</p>
+                    <p><strong>Humidity:</strong> <span id="day1-humidity"></span>%</p>
+                </div>
+                <!-- Similar cards for Day 2 through 5 will be needed. Use the same format as above. -->
+            </div>
+        </div>
