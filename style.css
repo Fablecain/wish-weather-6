@@ -1,0 +1,86 @@
+/* Base styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('Assets/Images/header img.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    border-radius: 5px;
+    backdrop-filter: blur(5px); /* Soft blur effect for a dreamy touch */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    background: linear-gradient(to bottom, #e6f2ff, #c9e0ff); /* Sky-blue gradient */
+}
+
+/* Enhanced background gradients for container */
+.container {
+    background: linear-gradient(to bottom, #e6f2ff, #c9e0ff); /* Sky-blue gradient */
+}
+
+/* Hover effect for search button */
+#search-button:hover {
+    background-color: #0055aa; /* Darker on hover */
+    transform: scale(1.05); /* Slight increase in size */
+    transition: all 0.3s; /* Smooth transition for all changes */
+}
+
+/* Hover effect for history list items */
+#search-history li:hover {
+    background-color: #d4e7ff; /* Soft blue on hover */
+    transform: translateY(-3px); /* Slight move upwards */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Shadow for "lifted" effect */
+    transition: all 0.3s; 
+}
+
+/* Animation for weather cards to "fade in" */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem); /* Start slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+
+.weather-card {
+    padding: 1rem;
+    background: linear-gradient(to right, #f5f5f5, rgba(240,240,255,0.8)); /* Soft gradient */
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(3px); /* Soft blur effect */
+    animation: fadeIn 0.7s ease-out; /* Apply "fadeIn" animation */
+}
+
+.weather-card img {
+    width: 60px; /* Increased icon size */
+    margin-right: 15px; /* Space between icon and text */
+    vertical-align: middle; /* Align icon with text */
+}
+
+/* Gradient for forecast container */
+#forecast-container {
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5), rgba(255,255,255,0.7));
+    padding: 1rem; /* Padding to ensure gradient effect is seen */
+    border-radius: 5px; /* Rounded edges for consistency */
+}
+
+/* Hover effect for forecast cards */
+.weather-card:hover {
+    background: linear-gradient(to right, #d4e7ff, rgba(220,235,255,0.8)); /* Soft blue gradient on hover */
+    transform: scale(1.02); /* Slightly enlarge the card */
+    transition: all 0.3s; 
+}
+
