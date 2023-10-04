@@ -1,101 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wish Weather 6</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+    <div class="container">
+        <header>
+            <h1>Wish Weather 6</h1>
+        </header>
 
-    <header>
-        <h1>Wish Weather 6</h1>
-    </header>
-
-    <section class="main-content">
-        <!-- Search Area -->
-        <div class="search-area">
-            <h2>Find Weather for Your City</h2>
-            <input type="text" id="city-input" placeholder="Enter City Name">
-            <button id="search-btn">Search</button>
-        </div>
-
-        <!-- Display Area (divided into Current Weather and 5-Day Forecast) -->
-        <div class="display-area">
-            <!-- Current Weather Display Area -->
-            <div class="current-weather">
-                <h2>Current Conditions</h2>
-                <h3 id="city-name-date"></h3> <!-- Format Example: "New York (01/01/2023)" -->
-                <img id="weather-icon" src="" alt="Weather Icon" title="Weather Condition">
-                <p><strong>Temperature:</strong> <span id="temperature"></span>°F</p>
-                <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
-                <p><strong>Wind Speed:</strong> <span id="wind-speed"></span> mph</p>
+        <section class="main-content">
+            <div class="search-area">
+                <h2>Find Weather for Your City</h2>
+                <input type="text" id="city-input" placeholder="Enter City Name">
+                <button id="search-btn">Search</button>
             </div>
 
-            <!-- 5-Day Forecast Display Area -->
-            <div class="forecast">
-                <h2>5-Day Forecast</h2>
-                <!-- Day 1 Card -->
-                <div class="forecast-card" id="day1">
-                    <h3 id="day1-date"></h3>
-                    <img id="day1-icon" src="" alt="Weather Icon" title="Weather Condition">
-                    <p><strong>Temperature:</strong> <span id="day1-temperature"></span>°F</p>
-                    <p><strong>Wind Speed:</strong> <span id="day1-wind-speed"></span> mph</p>
-                    <p><strong>Humidity:</strong> <span id="day1-humidity"></span>%</p>
-                </div>
-                
-                <!-- Day 2 Card -->
-                <div class="forecast-card" id="day2">
-                    <h3 id="day2-date"></h3>
-                    <img id="day2-icon" src="" alt="Weather Icon" title="Weather Condition">
-                    <p><strong>Temperature:</strong> <span id="day2-temperature"></span>°F</p>
-                    <p><strong>Wind Speed:</strong> <span id="day2-wind-speed"></span> mph</p>
-                    <p><strong>Humidity:</strong> <span id="day2-humidity"></span>%</p>
+            <div class="display-area">
+                <div class="current-weather">
+                    <h2>Current Conditions</h2>
+                    <h3 id="city-name-date"></h3>
+                    <!-- Use the correct element for FontAwesome icons -->
+                    <i id="weather-icon"></i>
+                    <p><strong>Temperature:</strong> <span id="temperature"></span>°F</p>
+                    <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+                    <p><strong>Wind Speed:</strong> <span id="wind-speed"></span> mph</p>
                 </div>
 
-                <!-- Day 3 Card -->
-                <div class="forecast-card" id="day3">
-                    <h3 id="day3-date"></h3>
-                    <img id="day3-icon" src="" alt="Weather Icon" title="Weather Condition">
-                    <p><strong>Temperature:</strong> <span id="day3-temperature"></span>°F</p>
-                    <p><strong>Wind Speed:</strong> <span id="day3-wind-speed"></span> mph</p>
-                    <p><strong>Humidity:</strong> <span id="day3-humidity"></span>%</p>
-                </div>
+                <div class="forecast">
+                    <h2>5-Day Forecast (Every 3 hours)</h2>
+                    <!-- Day 1 Card -->
+                    <div class="forecast-card" id="day1">
+                        <h3 id="day1-date"></h3>
+                        <!-- Use the correct element for FontAwesome icons -->
+                        <i id="day1-icon" class="fas"></i>
+                        <p><strong>Temperature:</strong> <span id="day1-temperature"></span>°F</p>
+                        <p><strong>Wind Speed:</strong> <span id="day1-wind-speed"></span> mph</p>
+                        <p><strong>Humidity:</strong> <span id="day1-humidity"></span>%</p>
+                    </div>
 
-                <!-- Day 4 Card -->
-                <div class="forecast-card" id="day4">
-                    <h3 id="day4-date"></h3>
-                    <img id="day4-icon" src="" alt="Weather Icon" title="Weather Condition">
-                    <p><strong>Temperature:</strong> <span id="day4-temperature"></span>°F</p>
-                    <p><strong>Wind Speed:</strong> <span id="day4-wind-speed"></span> mph</p>
-                    <p><strong>Humidity:</strong> <span id="day4-humidity"></span>%</p>
-                </div>
+                    <!-- Day 2 Card -->
+                    <div class="forecast-card" id="day2">
+                        <h3 id="day2-date"></h3>
+                        <!-- Use the correct element for FontAwesome icons -->
+                        <i id="day2-icon" class="fas"></i>
+                        <p><strong>Temperature:</strong> <span id="day2-temperature"></span>°F</p>
+                        <p><strong>Wind Speed:</strong> <span id="day2-wind-speed"></span> mph</p>
+                        <p><strong>Humidity:</strong> <span id="day2-humidity"></span>%</p>
+                    </div>
 
-                <!-- Day 5 Card -->
-                <div class="forecast-card" id="day5">
-                    <h3 id="day5-date"></h3>
-                    <img id="day5-icon" src="" alt="Weather Icon" title="Weather Condition">
-                    <p><strong>Temperature:</strong> <span id="day5-temperature"></span>°F</p>
-                    <p><strong>Wind Speed:</strong> <span id="day5-wind-speed"></span> mph</p>
-                    <p><strong>Humidity:</strong> <span id="day5-humidity"></span>%</p>
-                </div>
+                    <!-- Day 3 Card -->
+                    <div class="forecast-card" id="day3">
+                        <h3 id="day3-date"></h3>
+                        <!-- Use the correct element for FontAwesome icons -->
+                        <i id="day3-icon" class="fas"></i>
+                        <p><strong>Temperature:</strong> <span id="day3-temperature"></span>°F</p>
+                        <p><strong>Wind Speed:</strong> <span id="day3-wind-speed"></span> mph</p>
+                        <p><strong>Humidity:</strong> <span id="day3-humidity"></span>%</p>
+                    </div>
 
+                    <!-- Day 4 Card -->
+                    <div class="forecast-card" id="day4">
+                        <h3 id="day4-date"></h3>
+                        <!-- Use the correct element for FontAwesome icons -->
+                        <i id="day4-icon" class="fas"></i>
+                        <p><strong>Temperature:</strong> <span id="day4-temperature"></span>°F</p>
+                        <p><strong>Wind Speed:</strong> <span id="day4-wind-speed"></span> mph</p>
+                        <p><strong>Humidity:</strong> <span id="day4-humidity"></span>%</p>
+                    </div>
+
+                    <!-- Day 5 Card -->
+                    <div class="forecast-card" id="day5">
+                        <h3 id="day5-date"></h3>
+                        <!-- Use the correct element for FontAwesome icons -->
+                        <i id="day5-icon" class="fas"></i>
+                        <p><strong>Temperature:</strong> <span id="day5-temperature"></span>°F</p>
+                        <p><strong>Wind Speed:</strong> <span id="day5-wind-speed"></span> mph</p>
+                        <p><strong>Humidity:</strong> <span id="day5-humidity"></span>%</p>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Search History Sidebar/Section -->
-        <aside class="search-history">
-            <h2>Search History</h2>
-            <ul id="history-list">
-                <!-- Search history items appended here-->
-            </ul>
-        </aside>
-    </section>
+            <!-- Search History Sidebar/Section -->
+            <aside class="search-history">
+                <h2>Search History</h2>
+                <ul id="history-list">
+                    <!-- Search history items appended here-->
+                </ul>
+            </aside>
+        </section>
 
-    <footer>
-        <p>Wish Weather 6 | Developed by FableCain</p>
-    </footer>
+        <footer>
+            <p>Wish Weather 6 | Developed by FableCain</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
+
