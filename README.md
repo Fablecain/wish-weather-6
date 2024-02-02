@@ -10,7 +10,7 @@
 
 
 ## Installation
-Click the link to get started! 
+Click the link to get started! https://fablecain.github.io/wish-weather-6/
 ![Screenshot (20)](https://github.com/Fablecain/wish-weather-6/assets/139589280/858b4c93-adbe-4494-8497-61cd61e9978f)
 
 
